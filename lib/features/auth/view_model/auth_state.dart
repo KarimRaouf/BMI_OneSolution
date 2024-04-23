@@ -58,8 +58,8 @@ class CreateUserErrorState extends AuthState {
 class LoginLoadingState extends AuthState {}
 
 class LoginSuccessState extends AuthState {
-  final String uId;
-  LoginSuccessState(this.uId);
+
+  LoginSuccessState();
 }
 
 class LoginErrorState extends AuthState {

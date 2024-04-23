@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../core/utils/app_ui.dart';
-import '../core/utils/styles.dart';
+
+import '../../utils/app_ui.dart';
+import '../../utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? hint, lable;

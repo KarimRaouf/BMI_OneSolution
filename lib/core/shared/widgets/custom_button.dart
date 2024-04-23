@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../core/utils/app_ui.dart';
+import '../../utils/app_ui.dart';
+
 
 // ignore: must_be_immutable
 class CustomButton extends StatelessWidget {

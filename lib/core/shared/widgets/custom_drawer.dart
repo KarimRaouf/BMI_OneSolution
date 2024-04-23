@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../core/utils/app_ui.dart';
-import '../core/utils/app_util.dart';
+import '../../utils/app_ui.dart';
+
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

@@ -1,3 +1,4 @@
+import 'package:bmi/core/utils/app_ui.dart';
 import 'package:bmi/core/utils/styles.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -57,9 +58,10 @@ abstract class AppUtil {
           {required BuildContext context, required String content}) =>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
+          backgroundColor: AppUI.navyBlue,
           content: Text(
             content,
-            style: Styles.textStyle14,
+            style: Styles.textStyle14.copyWith(color: AppUI.whiteColor),
           ),
         ),
       );

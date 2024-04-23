@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/shared/widgets/custom_button.dart';
 import '../../../core/utils/app_util.dart';
 import '../../../core/utils/styles.dart';
-import '../../../widgets/custom_button.dart';
 import '../view_model/auth_cubit.dart';
 import '../view_model/auth_state.dart';
 import 'login_view.dart';

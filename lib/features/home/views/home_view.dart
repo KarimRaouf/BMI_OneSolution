@@ -6,29 +6,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/shared/cache_helper.dart';
 import '../../../core/shared/widgets/custom_button.dart';
 import '../../../core/utils/strings.dart';
-import '../view_model/auth_cubit.dart';
-import '../view_model/auth_state.dart';
+import '../view_model/home_cubit.dart';
+import '../view_model/home_states.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
+    return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {
-        if (state is LoginErrorState) {
-        }
 
-        if (state is LoginSuccessState) {
-
-
-          // AppUtil.removeUntilNavigator(context, PanelView());
-          AppUtil.showSnackBar(
-              context: context, content: AppStrings.loginSuccess);
-        }
       },
       builder: (context, state) {
-        AuthCubit authCubit = AuthCubit.get(context);
+        HomeCubit homeCubit = HomeCubit.get(context);
         return SafeArea(
           child: Scaffold(
             body: Center(
@@ -48,9 +39,7 @@ class LoginView extends StatelessWidget {
                       : CustomButton(
                           size: 25,
                           text: AppStrings.login,
-                          onTap: () {
-                            authCubit.signInAnonymous(context: context);
-                          },
+                          onTap: () {},
                           buttomWidth: .75 * MediaQuery.sizeOf(context).width,
                         ),
                 ],
