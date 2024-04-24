@@ -1,5 +1,6 @@
 import 'package:bmi/core/shared/cache_helper.dart';
 import 'package:bmi/features/home/view_model/home_cubit.dart';
+import 'package:bmi/features/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,11 +21,22 @@ Future<void> main() async {
 
   uId = await CacheHelper.getSavedString('uId', '');
 
-  runApp(const MyApp());
+  print(uId);
+  Widget startWidget = LoginView();
+
+  if (uId == '') {
+     startWidget = LoginView();
+  } else {
+     startWidget = HomeView();
+  }
+
+  runApp(MyApp(start: startWidget));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key, required this.start});
+
+  final Widget start;
 
   // This widget is the root of your application.
   @override
@@ -44,7 +56,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Poppins',
           // scaffoldBackgroundColor: AppUI.whiteColor,
         ),
-        home: LoginView(),
+        home: start,
       ),
     );
   }

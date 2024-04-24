@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/shared/cache_helper.dart';
 import '../../../core/shared/widgets/custom_button.dart';
 import '../../../core/utils/strings.dart';
+import '../../home/views/home_view.dart';
 import '../view_model/auth_cubit.dart';
 import '../view_model/auth_state.dart';
 
@@ -22,7 +23,7 @@ class LoginView extends StatelessWidget {
         if (state is LoginSuccessState) {
 
 
-          // AppUtil.removeUntilNavigator(context, PanelView());
+          AppUtil.removeUntilNavigator(context, const HomeView());
           AppUtil.showSnackBar(
               context: context, content: AppStrings.loginSuccess);
         }

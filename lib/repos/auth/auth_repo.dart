@@ -1,3 +1,4 @@
+import 'package:bmi/core/utils/strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -13,6 +14,7 @@ class AuthRepository {
           await FirebaseAuth.instance.signInAnonymously();
 
       CacheHelper.setSavedString('uId', userCredential.user!.uid);
+      uId = userCredential.user!.uid;
 
       return userCredential.user;
     } on FirebaseAuthException catch (e) {

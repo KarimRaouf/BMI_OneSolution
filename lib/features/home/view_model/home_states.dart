@@ -3,9 +3,10 @@ abstract class HomeState {}
 
 class HomeInitial extends HomeState {}
 
-class AuthLoginLoading extends HomeState {}
+class HomeItemsLoading extends HomeState {}
 
-class AuthLoginSuccess extends HomeState {}
+class HomeItemsSuccess extends HomeState {}
+class FilterListState extends HomeState {}
 
 class AuthLoginError extends HomeState {
   final String errorMessage;

@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../features/auth/views/login_view.dart';
 import '../utils/app_util.dart';
 
 class CacheHelper {
@@ -41,6 +42,6 @@ class CacheHelper {
   static logOut(context) async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     await _prefs.clear();
-    // AppUtil.replacementNavigator(context, const LoginView(isFirstLogin: false));
+    AppUtil.replacementNavigator(context, const LoginView());
   }
 }
